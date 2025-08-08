@@ -153,4 +153,20 @@ To kill the container after the successful run of the command (--rm)
 
 docker run -itd -P --rm imagename
 
-x
+to push to docker hub
+
+make sure that login to docker before pushing
+
+docker push dockerreponame
+
+and to while building or creating  the image and create a unique imagename use that usernamename of a docker with imagename add make sure that add dot at the send so that it is going to create in a same folder
+
+
+and pull from the docker use docker pull unique_username/imagename:latest
+
+and build the image using
+
+
+when we build the image it will check the dockerfile with this name only but if we use difffername we have to use the flag called -f filename
+
+docker build -t imagename -f new_dockerfile .

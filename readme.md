@@ -142,3 +142,59 @@ docker run -it -p 3000:3000 expressapp
 ---
 
 📝 **Tip**: Always make sure your containers are stopped before removing their images!
+
+
+## 1. Run Container in Detached Mode
+Run the container in **detached mode** so that the terminal is not blocked:
+```bash
+docker run -itd -P imagename
+```
+- `-i` → Interactive mode  
+- `-t` → Allocate a pseudo-TTY  
+- `-d` → Detached mode  
+- `-P` → Publish all exposed ports to random host ports  
+
+## 2. Run Container and Remove Automatically
+To **kill and remove** the container after a successful run:
+```bash
+docker run -itd -P --rm imagename
+```
+- `--rm` → Automatically remove container after exit
+
+## 3. Push to Docker Hub
+Before pushing, make sure you are logged in:
+```bash
+docker login
+docker push dockerreponame
+```
+
+## 4. Naming Images When Building
+When building an image, it's a good practice to use your **Docker Hub username** in the image name.
+Make sure to add `.` at the end to build from the current directory:
+```bash
+docker build -t username/imagename .
+```
+This ensures the image will be available for pushing to your Docker Hub repository.
+
+## 5. Pull Image from Docker Hub
+To pull an image from Docker Hub:
+```bash
+docker pull unique_username/imagename:latest
+```
+
+## 6. Building Image with a Custom Dockerfile
+If your Dockerfile has a different name, use the `-f` flag:
+```bash
+docker build -t imagename -f new_dockerfile .
+```
+- `-t` → Tag (name) the image  
+- `-f` → Specify Dockerfile name
+
+---
+**Example: Running Express App**
+```bash
+docker run -it -p 3000:3000 expressapp
+```
+This maps **port 3000** from the container to **port 3000** on the host.
+
+

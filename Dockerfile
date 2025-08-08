@@ -9,7 +9,7 @@ COPY package.json .
 COPY package-lock.json .
 
 #install dependencies
-RUN npm install
+RUN npm install --omit=dev
 
 #copy the rest of the application
 COPY . .
