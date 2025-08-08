@@ -142,3 +142,15 @@ docker run -it -p 3000:3000 expressapp
 ---
 
 📝 **Tip**: Always make sure your containers are stopped before removing their images!
+
+
+to run on the detach mode so that terminal wont block 
+
+
+docker  run -itd -P imagename (-itd)
+
+To kill the container after the successful run of the command (--rm)
+
+docker run -itd -P --rm imagename
+
+x
